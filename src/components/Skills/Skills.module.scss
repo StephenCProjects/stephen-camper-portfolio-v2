@@ -1,0 +1,72 @@
+@use "sass:color";
+@use "../../app/globals" as *;
+
+.skillsOverview {
+    margin-top: 2rem;
+
+    @media (min-width: 576px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.skillsItem {
+    @media (max-width: 767px) {
+        margin-bottom: 2.5rem;
+    }
+
+
+
+    h3 {
+        margin-top: 0.75rem;
+        margin-bottom: 0.5rem;
+        font-size: 18px;
+        font-weight: 700;
+
+        @media (min-width: 768px) {
+            font-size: 20px; 
+        }
+
+        @media (min-width: 992px) {
+            font-size: 22px;
+            font-size: 1.3rem;
+        }
+    }
+
+    h4 {
+        margin-top: 1rem;
+        margin-bottom: 0.1rem;
+    }
+
+    ul {
+        li {
+            ul {
+
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+
+                li {
+
+                    padding: 0.1rem 0 0 0.25rem;
+                    position: relative;
+
+                    &:not(:last-child)::after {
+                        content: " / ";
+                        color: $grey;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.iconSkills {
+    width: 48px;
+    height: 48px;
+}

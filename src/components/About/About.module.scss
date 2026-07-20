@@ -1,0 +1,32 @@
+@use "sass:color";
+@use "../../app/globals" as *;
+
+
+.sectionAbout {
+    background-color: $lightGrey;
+}
+
+.quickFacts {
+    margin-top: 2rem;
+    margin-bottom: 0.2rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.factsOverview {
+    max-width: 605px;
+    margin: 0 auto 2rem;
+}
+
+.factsItem {
+    margin: 0 0 0.3rem;
+    font-style: italic;
+}
+
+.iconFacts {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.3rem;
+    margin-top: -0.25rem;
+    vertical-align: middle;
+}

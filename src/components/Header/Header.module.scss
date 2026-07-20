@@ -1,0 +1,153 @@
+@use "sass:color";
+@use "../../app/globals" as *;
+
+.header {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 26px;
+    padding-bottom: 26px;
+    z-index: 10;
+    background-color: $navyBlue;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .navbarBrand {
+            font-family: $fontSecondary;
+            font-size: 1.25rem;
+            line-height: 1;
+            font-weight: 700;
+            color: $white;
+            text-decoration: none;
+            visibility: hidden;
+            transition: visibility 0s linear 0.2s, opacity 0.2s ease-in-out;
+            opacity: 0;
+
+            &.show {
+                visibility: visible;
+                opacity: 1;
+                transition-delay: 0s;
+            }
+
+            span.navbarBrandTitle {
+                color: $grey;
+
+                @media (max-width: 767px) {
+                    display: none;
+                }
+            }
+        }
+
+        .navbarMenu {
+            display: none;
+            background: transparent;
+            border: none;
+            padding: 0;
+
+            @media (max-width: 767px) {
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                gap: 4px;
+                width: 25px;
+                height: 20px;
+                justify-content: space-between;
+                -webkit-appearance: none;
+                -webkit-tap-highlight-color: transparent;
+
+                span {
+                    width: 100%;
+                    height: 3px;
+                    background: $white;
+                    display: block;
+                    border-radius: 2px;
+                    transition: all 0.3s ease;
+                }
+            }
+
+            &.active span:nth-child(1) {
+                transform-origin: center center;
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+
+            &.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            &.active span:nth-child(3) {
+                transform-origin: center center;
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+        }
+
+        .navbarNav {
+            @media (max-width: 767px) {
+                position: absolute;
+                top: 72px;
+                left: 0;
+                max-height: 0;
+                width: 100%;
+                overflow: hidden;
+                flex-direction: column;
+                transition: max-height 0.3s ease;
+                background-color: #2C3E50;
+            }
+
+            .navbarLinks {
+                @media (min-width: 768px) {
+                    display: flex;
+                }
+
+                li {
+                    padding: 0 1rem;
+                    font-family: $fontSecondary;
+                    font-size: 16px;
+                    line-height: 1;
+                    font-weight: 700;
+                    text-align: left;
+
+                    @media (max-width: 767px) {
+                        padding: 0;
+                    }
+
+                    a {
+                        color: $white;
+                        text-decoration: none;
+                        transition: color 0.15s ease-in-out;
+
+                        @media (max-width: 767px) {
+                            display: block;
+                            padding: 1.5rem 1rem;
+                            border-bottom: 1px solid $grey;
+                        }
+
+                        &:hover {
+                            color: $orange;
+
+                            @media (max-width: 767px) {
+                                background-color: color.adjust(#2C3E50, $lightness: 3%);
+                            }
+                            
+                        }
+
+                        &.active {
+                            color: $darkOrange;
+                        }
+                    }
+                } 
+            }
+
+            &.show {
+                @media (max-width: 767px) {
+                    display: flex;
+                    max-height: 13rem;
+                }
+            }
+        }
+    }
+}

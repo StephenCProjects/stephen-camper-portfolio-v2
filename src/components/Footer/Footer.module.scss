@@ -1,0 +1,60 @@
+@use "sass:color";
+@use "../../app/globals" as *;
+
+.footer {
+    text-align: center;
+}
+
+.contentCTA {
+    margin-bottom: 0.75rem;
+    font-size: 1.13rem;
+    font-weight: 500;
+}
+
+.footerLinks {
+    @media (min-width: 768px) {
+        display: flex;
+        justify-content: center;   
+    }
+}
+
+.footerLink {
+    color: $darkGrey;
+
+    @media (max-width: 767px) {
+        margin: 0.5rem 0;
+    } 
+
+    @media (min-width: 768px) {
+        margin: 0 1rem; 
+    }
+}
+
+.iconContact {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.3rem;
+    margin-top: -0.1rem;
+    vertical-align: middle;
+    color: $darkOrange;
+}
+
+p.footerQuote {
+    margin-top: 1.5rem;
+    // margin-bottom: 1.5rem;
+    font-size: 0.7rem;
+    color: $darkGrey;
+}
+
+p.copyright {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: $darkGrey;
+}
+
+p.builtWith {
+    margin-top: 3rem;
+    // margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: $darkGrey;
+}

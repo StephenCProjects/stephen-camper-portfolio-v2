@@ -1,0 +1,141 @@
+@use "./globals" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:focus {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid $darkOrange;
+    outline-offset: 2px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $fontPrimary;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $black;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+    font-family: $fontSecondary;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+a {
+    color: $orange;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 0.2em;
+
+    &:hover {
+        color: $darkOrange;
+        text-decoration-style: solid;
+        text-underline-offset: 0.3em;
+    }
+}
+    
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+
+    &.container-lg {
+        max-width: 1200px;
+    }
+}
+
+hr.divider {
+    height: 0.2rem;
+    max-width: 3.25rem;
+    margin: 1.5rem auto;
+    border: 0;
+    border-top: 3px solid $orange;
+}
+
+.btn {
+    display: block;
+    background-color: $orange;
+    padding: 0.75rem 1.75rem;
+    border-radius: 10rem;
+    font-family: $fontSecondary;
+    font-size: 1rem;
+    color: $white;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content; 
+    
+    &:hover {
+        color: $white;
+        background-color: $darkOrange;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    color: $darkOrange;
+}
+
+.stackSep {
+    color: $darkOrange;
+}
+
+section, footer {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-align: center;
+    scroll-margin-top: 72px;
+
+    h2.title {
+        font-size: 1.5rem;
+        line-height: 1.25;
+
+        @media (min-width: 768px) {
+            font-size: 1.75rem;
+        }
+
+        @media (min-width: 992px) {
+            font-size: 2rem;
+        }
+    }
+}
+
+p.content {
+    max-width: 605px;
+    margin: 0 auto 1rem; 
+}
+
+.iconLinkArrow {
+    width: 12px;
+    height: 12px;
+    margin-top: -0.1rem;
+    vertical-align: middle;
+}

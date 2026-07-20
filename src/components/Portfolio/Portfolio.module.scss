@@ -1,0 +1,344 @@
+@use "sass:color";
+@use "../../app/globals" as *;
+
+.sectionPortfolio {
+    background-color: $lightGrey;
+
+    .btnToggleGallery {
+        display: none;
+        margin: 2rem 0 2rem auto;
+        padding: 12px 18px;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        background: rgba($white,0.7);
+        border: 1px solid $darkGrey;
+        color: $darkGrey;
+        z-index: 10;
+        cursor: pointer;
+
+        @media (min-width: 768px) {
+            display: block;
+        }
+
+        &:hover {
+            background: rgba($white, 1);
+            color: $navyBlue;
+            border: 1px solid $navyBlue;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        &.expanded {
+            top: 6rem;
+            right: 2rem;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            background: rgba(255,255,255,0.95);
+            color: $navyBlue;
+            border: 1px solid $navyBlue;
+            position: fixed;
+            opacity: 0;
+            visibility: hidden;
+            transition: visibility 0s linear 0.2s, opacity 0.2s ease-in-out;
+
+            &.show {
+                visibility: visible;
+                opacity: 1;
+                transition-delay: 0s;
+            }
+        }
+    }
+           
+    .projectGallery {
+        @media (min-width: 768px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, auto);
+            gap: 2rem;
+        }
+
+        @media (min-width: 992px) {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, auto);
+        }
+
+        > * {
+            transition: opacity 200ms ease-in-out;
+        }
+
+        &.isFading > * {
+            opacity: 0;
+        }
+
+        .project {
+            @media (max-width: 767px) {
+               margin-bottom: 5rem;  
+
+                &:last-of-type {
+                    margin-bottom: 0; 
+                }
+            }
+
+            .projectMedia {
+                aspect-ratio: 16 / 9;
+                overflow: hidden;
+                background-color: $white;
+                margin-bottom: 1rem;  
+                box-shadow: 0 0 15px #999;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .projectContent {
+                h3 {
+                    font-size: 1.3rem;
+
+                    .projectTitleLong {
+                        display: none;
+                    }
+                }
+
+                p {
+                    &.projectDescLong {
+                        display: none;
+                    }
+
+                    &.projectStack {
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: $darkGrey;
+
+                        .stackSep {
+                            color: $darkOrange;
+                        }
+
+                        .projectStackLong {
+                            display: none;
+                        }
+                    }
+                }
+
+                .projectLinks {
+                    display: none;
+                }
+            }
+
+            // - Specific projects
+            &.projectBanner {
+                .projectMedia {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    .projectMediaInner {
+                        width: 300px;
+                        height: 250px;
+                        overflow: hidden;
+
+                        img {
+                            max-width: 300px;
+                        }
+                    }
+                }
+            }
+                        
+            &.projectEmail {
+                .projectMedia {
+                    .projectMediaInner {
+                        width: 100%;
+                        height: 100%;
+                        background: url('/img/email-mobile-collapsed.webp') no-repeat center top / cover;
+                        max-width: 360px;
+                        margin: 0 auto;
+                        border: 1px solid $grey;
+
+                        img {
+                            display: none;
+                        }
+
+                        @media (min-width: 992px) {
+                            width: 100%;
+                            height: 100%;
+                            background: url('/img/email-desktop-collapsed.webp') no-repeat center top / cover;
+                            max-width: 600px;
+                            margin: 0 auto;
+                            border: 1px solid $grey;
+
+                            img {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Projects - expanded
+        &.expanded {
+            @media (min-width: 768px) {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(6, auto);
+                gap: 3rem;
+                margin-bottom: 4rem;
+
+                .project {
+                    @media (min-width: 992px) {
+                        display: grid;
+                        grid-template-columns: 2fr 1fr;
+                    }
+
+                    .projectMedia {
+                        max-width: 600px;
+                        margin: 0 auto;
+                        
+                        @media (min-width: 992px) {
+                            max-width: initial;
+                            margin: initial;
+                        }
+                    }
+
+                    .projectContent {
+                        padding: 1.5rem;
+
+                        h3 {
+                            font-size: 1.15rem;
+                            line-height: 1.2;
+
+                            .projectTitleShort {
+                                display: none;
+                            }
+
+                            .projectTitleLong {
+                                display: block;
+                            }
+                        }
+                        
+                        p {
+                            &.projectDescShort {
+                                display: none;
+                            }
+
+                            &.projectDescLong {
+                                display: block;
+                                font-size: 0.9rem;
+                            }
+
+                            &.projectStack {
+                                .projectStackShort {
+                                    display: none;
+                                }
+
+                                .projectStackLong {
+                                    display: block;
+                                    font-size: 0.8rem;
+                                }
+                            }
+                        }
+
+                        .projectLinks {
+                            margin-top: 2rem;
+                            display: grid;
+                            grid-template-columns: repeat(2, auto);
+                            justify-content: center;
+                            gap: 1rem;
+
+                            @media (max-width: 992px) {
+                                display: flex;
+                                justify-content: center;
+                            }
+
+                            li {
+                                margin-bottom: 0.7rem;                           
+                                
+                                @media (max-width: 992px) {
+                                    padding: 0 1rem;
+                                }
+
+                                a {
+                                    font-size: 0.9rem;
+
+                                    &.active {
+                                        color: $darkOrange;
+                                        text-decoration-style: solid;
+                                        text-underline-offset: 0.3em;
+                                        text-decoration-thickness: 1.5px;
+                                        text-decoration-color: $darkOrange;
+                                    }
+                                }
+
+                                .icon.iconLinkArrow {
+                                    width: 12px;
+                                    height: 12px;
+                                    margin-top: -0.1rem;
+                                    vertical-align: middle;
+                                }
+                            }
+                        }
+                    }
+
+                    // - Specific projects
+                    &.projectBanner {
+                        .projectMedia {
+                            .projectMediaInner {
+                                iframe {
+                                    height: 250px;
+                                    pointer-events: none;
+                                }
+                            }
+                        }
+
+                        &.bannerLoaded {
+                            .projectMedia {
+                                .projectMediaInner {
+                                    &.bannerPreview {
+                                        img {
+                                            position: absolute;
+                                            visibility: hidden;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.projectEmail {
+                        .projectMedia {
+                            overflow-y: auto;
+                            
+                            .projectMediaInner {
+                                background: none;
+                                height: auto;
+
+                                &.projectMobileEmail {
+                                    max-width: 360px;
+                                    height: auto;
+                                }
+
+                                img {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .portfolioAdditional {
+        margin-top: 2rem;
+
+        a {
+            .icon.iconLinkArrow {
+                width: 12px;
+                height: 12px;
+                margin-top: -0.1rem;
+                vertical-align: middle;
+            }
+        }
+    }
+}
