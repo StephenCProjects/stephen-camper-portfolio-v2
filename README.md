@@ -23,4 +23,4 @@ A personal portfolio site built with Next.js and TypeScript.
 
 ## Overview
 
-This project is a full rebuild of an existing vanilla JS portfolio into a modern Next.js application. It demonstrates React Server Components, client-side state management, CSS Modules scoping, and environment variable handling for sensitive contact data.
+This project is a full rebuild of existing vanilla JS portfolio (at [stephencamper.com/portfolio](http://stephencamper.com/portfolio)) into a modern Next.js application. It demonstrates React Server Components, client-side state management, CSS Modules scoping, and environment variable handling for sensitive contact data.
