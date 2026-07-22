@@ -91,7 +91,7 @@ export default function Portfolio() {
                 </div>
 
                 <div className={styles.portfolioAdditional}>
-                    <p className="content"><a href="https://github.com/StephenCProjects/professional-directory" target="_blank" rel="noopener">View React + TypeScript project on GitHub<svg className={`${styles.icon} ${styles.iconLinkArrow}`}><use href="/svg/icons.svg#icon-arrow-up-right"></use></svg></a></p>
+                    <p className="content"><a href="https://github.com/StephenCProjects/professional-directory" target="_blank" rel="noopener">View React + TypeScript projects on GitHub<svg className={`${styles.icon} ${styles.iconLinkArrow}`}><use href="/svg/icons.svg#icon-arrow-up-right"></use></svg></a></p>
                 </div>
             </div>
         </section>

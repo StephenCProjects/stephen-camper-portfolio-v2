@@ -20,7 +20,7 @@ const openSans = Open_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Stephen Camper | Frontend Developer",
+  title: "Stephen Camper - Front End Web Developer",
   description: "Frontend developer portfolio — React, Next.js, WordPress, GSAP, HTML email, and interactive web experiences.",
   authors: [{ name: "Stephen Camper" }],
   icons: {

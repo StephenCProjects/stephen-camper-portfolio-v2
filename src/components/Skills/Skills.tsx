@@ -20,19 +20,19 @@ export default function Skills() {
                                     <li>HTML</li>
                                     <li>CSS</li>
                                     <li>JavaScript</li>
-                                </ul>
+                                {/* </ul>
                             </li>
                             <li>
-                                <ul>
+                                <ul> */}
                                     <li>Sass</li>
                                     <li>GSAP</li>
-                                </ul>
+                                {/* </ul>
                             </li>
                             <li>
-                                <ul>
+                                <ul> */}
                                     <li>React JS</li>
-                                    <li>Next JS</li>
                                     <li>TypeScript</li>
+                                    <li>Next.js</li>
                                     <li>jQuery</li>
                                 </ul>
                             </li>
@@ -47,10 +47,10 @@ export default function Skills() {
                                 <ul>
                                     <li>WordPress</li>
                                     <li>Sitecore</li>
-                                </ul>
+                                {/* </ul>
                             </li>
                             <li>
-                                <ul>
+                                <ul> */}
                                     <li>Custom CMS</li>
                                     <li>Visual Studio</li>
                                     <li>ACF</li>
@@ -72,10 +72,10 @@ export default function Skills() {
                                 <ul>
                                     <li>Illustration</li>
                                     <li>Layout</li>
-                                </ul>
+                                {/* </ul>
                             </li>
                             <li>
-                                <ul>
+                                <ul> */}
                                     <li>Figma</li>
                                     <li>Photoshop</li>
                                     <li>Adobe XD</li>
@@ -95,12 +95,12 @@ export default function Skills() {
                                     <li>Analytics</li>
                                     <li>SEO</li>
                                     <li>Web Performance</li>
-                                </ul>
+                                {/* </ul>
                             </li>
                             <li>
-                                <ul>
-                                    <li>SEO</li>
+                                <ul> */}
                                     <li>Build Tools</li>
+                                    <li>Vercel</li>
                                 </ul>
                                 <h4>Workflow &amp; Collaboration</h4>
                                 <ul>
