@@ -1,4 +1,4 @@
-# Stephen Camper — Frontend Developer Portfolio
+# Front-End Developer Portfolio
 
 A personal portfolio site built with Next.js and TypeScript.
 
