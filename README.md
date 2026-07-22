@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Front-End Developer Portfolio
 
-## Getting Started
+A personal portfolio site built with Next.js and TypeScript.
 
-First, run the development server:
+**Live Demo:** https://stephen-camper-portfolio-v2.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Responsive design across all breakpoints
+- Animated HTML banner ads with GSAP
+- Interactive portfolio grid with expand/compact toggle
+- Active nav state via IntersectionObserver
+- Rotating footer quotes
+- Keyboard accessible navigation with focus trapping
+- Google Analytics via @next/third-parties
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.js 16 (App Router)
+- TypeScript
+- SCSS / CSS Modules
+- Vercel
 
-## Learn More
+## Overview
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is a full rebuild of existing vanilla JS portfolio (at [stephencamper.com/portfolio](http://stephencamper.com/portfolio)) into a modern Next.js application. It demonstrates React Server Components, client-side state management, CSS Modules scoping, and environment variable handling for sensitive contact data.
