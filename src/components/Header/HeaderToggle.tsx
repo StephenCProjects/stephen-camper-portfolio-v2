@@ -8,13 +8,17 @@ export default function HeaderToggle() {
     const [brandVisible, setBrandVisible] = useState(false);
     
     function handleToggle() {
+        const navLinks = document.querySelectorAll('.navbar-links li a') as NodeListOf<HTMLAnchorElement>;
+
         if (isOpen) {
             setIsOpen(false);
             document.body.style.overflow = '';
+            navLinks.forEach(link => { link.tabIndex = -1; });
         } else {
             setIsOpen(true);
             document.body.style.overflow = 'hidden';
-            
+            navLinks.forEach(link => { link.tabIndex = 0; });
+
             setTimeout(() => {
                 const firstLink = document.querySelector('.navbar-links li a') as HTMLAnchorElement;
                 firstLink?.focus();
@@ -123,11 +127,14 @@ export default function HeaderToggle() {
         }
 
         function handleResize() {
-            setLinksTabbable(isDesktop());
-
-            if (isDesktop() && isOpen) {
-                setIsOpen(false);
-                document.body.style.overflow = '';
+            if (isDesktop()) {
+                setLinksTabbable(true);
+                if (isOpen) {
+                    setIsOpen(false);
+                    document.body.style.overflow = '';
+                }
+            } else if (!isOpen) {
+                setLinksTabbable(false);
             }
         }
 
