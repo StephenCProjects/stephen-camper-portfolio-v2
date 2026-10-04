@@ -65,7 +65,7 @@ export const projects: Project[] = [
         id: 'banner-ads',
         'titleShort': 'Animated HTML Banner Ads',
         'titleLong': 'Animated HTML Banner Ads',
-        'descShort': 'Fixed-size HTML5 banner ads with GSAP animation for pharma compaigns.',
+        'descShort': 'Fixed-size HTML5 banner ads with GSAP animation for pharma campaigns.',
         'descLong': [
             'Created multiple HTML5 banner ads with GSAP-based animation for digital campaigns. Built banners that were fully animated and interactive, ensuring consistency with client designs and specifications across all ad size variations.'
         ],
